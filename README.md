@@ -1,5 +1,9 @@
 # This site is a proudly fork of **[Leonids](http://renyuanz.github.io/leonids)**
 
+More info there.
+
+------
+
 
 # Leonids Jekyll Themes
 
