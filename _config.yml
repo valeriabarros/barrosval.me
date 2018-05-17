@@ -3,23 +3,52 @@
 # Site wide configuration
 ####################################
 #
+<<<<<<< HEAD
 title: Val Barros
 email: hi@barrosval.me
+||||||| merged common ancestors
+title: Leonids
+email: zourenyuan@gmail.com
+=======
+title: Leonids
+email:
+>>>>>>> de673e079326e685becfa5345d6049c1607ccbc3
 description: A simple and awesome blog theme powered by jekyll.
+<<<<<<< HEAD
 url: https://barrosval.me # the base hostname & protocol for your site
 keywords: ["Programming", "PHP", "Javascript", "Remote", "Nomad"]
+||||||| merged common ancestors
+url: http://renyuanz.github.io/leonids # the base hostname & protocol for your site
+
+=======
+url: # the base hostname & protocol for your site
+
+>>>>>>> de673e079326e685becfa5345d6049c1607ccbc3
 
 #
 ###################################
 # Jekyll configuration
 ####################################
 #
+<<<<<<< HEAD
 timezone:          Europe/Paris
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
 # permalink:         /articles/:year-:month/:title
 permalink: pretty
+||||||| merged common ancestors
+markdown:           kramdown
+highlighter:        rouge
+excerpt_separator:  <!--more-->
+timezone:           Europe/Paris
+=======
+timezone:          Europe/Paris
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+>>>>>>> de673e079326e685becfa5345d6049c1607ccbc3
 
 kramdown:
   auto_ids: true
