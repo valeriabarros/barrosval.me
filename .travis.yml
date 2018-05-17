@@ -5,7 +5,7 @@ branches:
   only:
   - stable.05-18
 script:
-  - bundle exec jekyll build
+  - jekyll build
 
 env:
   global:
