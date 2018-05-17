@@ -3,11 +3,11 @@ rvm:
 - 2.4
 branches:
   only:
-  - stable.05-18
-script:
-  - jekyll build
+  - stable
 install: 
   gem install jekyll 
+script:
+  - jekyll build
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
