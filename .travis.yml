@@ -7,32 +7,26 @@ env:
   - secure: rtuFSREdsWLEX1CFyCfbEauAdGISDsl7CCxrdXxkHGLjeq0YWeKaZbk5AxqK3U3HL2haMh9DWGiBO1ztblNiqirHuki7pUglxmGe80l2dFDJ+rd8vXJqctoHNRUzpfAzL5NZMAIkIHPWNFensILgrm7BZ/KA3kXbLaSP4eeBbIwkSoz0XIPFxJ7Wa00JTl9T9qmf2bjt6Tj12vQ3DjvEIij43vfXRBrjzYeJRaJHVCvvwato33yLRq0xH6MIicg2nILIH9jrUQfhYthBQc5DwZ4hubJi0r9flF+sa7UYBe5gep/QWKNunjcMX5rZoGxtyZpWs2zZPgU1Sa5JaVhrtgvTq8VVstOnOZ9TT9yW7RafJRU7FXjxK7wMWFI8Vr2QtSOYigSzNwsdsVhtT/di9ND+H4aZNhxtfXrdExS+KALkU6dOdYM04unAPjB2QPiT8geDgG0kLQhedmADFXPDg7pwFBUpLJXarWpUjNSpgiVOlJvl/jieASlrzC/Ztg9PKT20SvACfkGkgDYSYRbWsO8K77YDnK1iuL+MHdkzcwb1wAy9KPYjDmx6iRll3WUqpH+mE9LIHr37SJGNzLu3/Fb2Eyjkl5IemeqpDsnGQZxshPuQSpHq1TOAzhEEplKl4A0coG/C6pBY+F3zdbfR21FIduKw2tm8h4usAZb7MzM=
   - secure: Qk7E3C/Wp3eI8yLF8Ai7UwulCyoFUSJEILyvZlYjiKRqX6L4hreDFSxHXOh9GV+Pk/YPFI1NBrvRSD0AiYeJX9RpADbhwjVR8IgDLHSXX8BhZ8sEd8HiPqsUl8n5NlEipfrIPEsvGq6eXHvzQK9r5oBzgHY4f597N5cYbzOqZ1Kd9YNUdSNwL6yFOX4622y/KMYC4T/kE9zsFqR9ClMpdMxtyyiKVCTY8bcHfIOu+BRdn8FKHQ0BkSVOAnBOekj1GBxDyJfjOOcveU8KjeYzhs2x7F8nW5O6f8nJboZfmlIkFjfpTBsCjt68QbZK/SqR0sG1Z8uCsz9DquK0T5gLgeizite1d5FrS0LESsL8j0+VsKPy1m68O/7h5IMM/Q/1Zs2L19vfviQaBT62D/Fi0nH6eU7DmHom6lBbhkxCIcvsoSB2h9eMN4VL7MZLl56txZ/6XFxUY1pVYSfwPQ8vv0eaKOSCoEYoWTULJQM8bwM9yRb9H+siyYDxztMEoTe66WD3WXC6QMLiffKiuX0GkMalLBRW3x9wCLkHB4v1GTzJ26vd5MlyKfg0UDJWKXLDVM6NeruyTOKXn0+OONh5sx86yOy/Y/hfmrUmxCzMKcZXaA5JBqFKjj6pLF8jsOEeebd+axSbGxs8jgfN9eY9xNuzBJgTEQntSzqLKBMLDqA=
   - secure: c+fn0OExjXKngcZ9+6zscKSEyQi3ft8ezy4DUsQX8Qa2imDXMdS/4/N+f50skYSpZv73uuFae8SX15cScTgHwIKOa1XZHkALuHI0A+51HLkIhtBuAAgafLYyKAlpswkvFzjEFxmgi8R5N2s6fXpEyyeYYjPvrx8GHTmT4KZvP6NtLPdTNEcp7GKzNRoXg8ywF03he2c/ZAoLNHAY9ngZqhMfaWH1A8kLRSdxxo00RmvGdf6S1RNdD1cwF+4RCO7sAdtwV59raNHN9F4GTXk3LdQ+Cj/yEV1bI+YA5MBOTPCwYQr+5oDtWwLR7KO8pzD0V7n1ft+Wt7+GfIMnN0URfX0xVceZ8DAR3Z4/6RX/2kshQpKSDHDecXOvW8C4AA5dT0GT+Tw7X/593oHTZ4HCALuGZ2lnh3GwreJcum6aKcup0RzDGe6IUCGDdC2V45sC5nmtVmNmJ2SBZH8P5oVs/9Uzftps5mugv1j95kG2rXRJP5npGBZP4QbWTBgGf/gyfR2KXs6eHSqatVCkRYwQYzAhCnfPXV2WwYn3HspldM4JuCwOeKDlVw+BXIt08L3nvGhyW1L8EaAFe5RvF0NezTMVnUyXBr7HQc+/FUnuzqm1ELxbxfWO+Ok1ypYvfxD8smGT0Qb/SiupzLy2OuC4enUVDbLoRvIgOPwL5TMz1M8=
-
 branches:
   only:
   - stable
-
 install: gem install jekyll
-
 script:
 - jekyll build
-
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_<stuff>_key -iv $encrypted_<stuff>_iv
-  -in ./deploy_rsa.enc -out /tmp/deploy_rsa -d
+- openssl aes-256-cbc -K $encrypted_3ecb93923dd4_key -iv $encrypted_3ecb93923dd4_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
 - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-
 addons:
   ssh_known_hosts: greaterscaup.dreamhost.com
-
 sudo: false
-
 deploy:
   provider: script
   skip_cleanup: true
   script: rsync -r --quiet --delete-after _site/* $DEPLOY_USER@$DEPLOY_HOST:/home/barrosval/barrosval.me
   on:
     branch: stable
+
