@@ -42,4 +42,5 @@ Tem que ser por mim.
 
 Por mim, por elas.
 
+---
 Exported from <a href="https://medium.com">Medium</a> on May 15, 2018.
