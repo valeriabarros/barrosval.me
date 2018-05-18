@@ -2,7 +2,7 @@
 layout: post
 title: Medium, mídia independente e a revolução.
 excerpt: "Ou: A mídia independente vai criar a revolução."
-categories: [representatividade]
+categories: [blog, revolução]
 modified: 2016-10-06
 comments: true
 image:
