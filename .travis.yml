@@ -11,8 +11,8 @@ install: gem install jekyll
 script:
 - jekyll build
 before_deploy:
-- eval "$(ssh-agent -s)"
-- ssh-add ~/deploy_rsa
+# - eval "$(ssh-agent -s)"
+# - ssh-add ~/deploy_rsa
 - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 addons:
   ssh_known_hosts: 69.163.163.106
