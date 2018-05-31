@@ -2,7 +2,7 @@
 layout: post
 title: Representatividade Importa!
 excerpt: "Eu fiquei me perguntando essa semana que tipo de impacto eu gostaria de causar com o que eu faço. Eu realmente sou dessas pessoas que querem mudar o mundo, sabe? Com 12 anos me perguntaram o que eu queria que acontecesse quando eu morresse. Eu só consegui dizer que queria ter marcado a história."
-categories: [representatividade]
+categories: [blog]
 modified: 2016-10-06
 comments: true
 image:
