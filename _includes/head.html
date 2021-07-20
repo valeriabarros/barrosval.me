@@ -1,0 +1,30 @@
+{% if page.title %}
+{% capture title %}{{ page.title }} | {{ site.title }}{% endcapture %}
+{% else %}
+{% capture title %}{{ site.title }}{% endcapture %}
+{% endif %}
+
+<head>
+  <title>{{ title }}</title>
+  {% include google_analytics.html %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="{{ site.user.name }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" media="all">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
+    href="{{ '/feed.xml' | relative_url }}" />
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{{ site.favicon | relative_url }}" type="image/x-icon" />
+  <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/x-icon" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+</head>

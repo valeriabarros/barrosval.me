@@ -1,0 +1,33 @@
+language: ruby
+rvm:
+ - 2.2
+ - jruby
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - secure: kiAO/ebv9n7+PR6YVyAIHP6CkuU4mj8JF0kaiu/bfIA7N3EbaU7uAMwS58gqPzRwcamMFiGqgXWXQQqUE6/xgTwQg/+rDPEm+h8AYdGBwQx+5fgC7pD0b5w3MzeqnS4Avu1cGfBrfKjACitFAkLw8INFtGLOoX3GsN83IVNkDTFj34TZ7QXsaCRz7Zl5eyD1lwmGf3krcoXcHgTb4cQZUloO4Seb0wSUXmnZ5KEtGV4Xr2EOa5T/Ukwe7lIdwpzMbhhZ9MMihXBe80aN+N+ja7QpNqsTYVEALcdDjlx5R+CAyEOzBtO/GwjMkv7n7GoKoZzCbPVgDHulztTcX7z7rtfY9TmTGHvKJ16fSVAVGPpoq/gaUb8vEND++BmQLW71SHHnNitg+3H8tydhCwjefMcUX9SL+ElzGDSSobzU9ED9K9lurLt3Av7aDAN+exxtyIhSAsvw0JAEcybnmLl/BUoXZYgOddunfhh516zmpVCWjDbW4FtsqUrQuofLpdSgWGbR+EMMSVppu9ACM4wEg1dUSmVnn2g1norAE24P4cC396673FmkXbg9Qcj0lVQOuunGRpnuTSKdlViE7uhNHtPY6gdhtW+zt7xSuaUWaJNL9uRsnhf5+AJz1VQNheM13SkLlNad0e1zAww9sfMn8DYJKJmrapDI4porY6HIGKI=
+  - secure: pjV09jOHdK6R1EhgG4x4KQKQv1sJjZaiXPt52wJ+CmizuMaG7bRB1kaB7dR2OSaIomFjl7ANnL/2qiWR0ZZDytLGIzXvfEifXpmx+RSeP91JCq2/MbVm2I/zwtdv5OGXh49kPrQuZvixSV5Y/JZ8EhHcmmNvFeV3HcYA3l3g3wCqZF5s2wKiXsbqDIQx6uQm31pGuzD+25ceYR31cugrSE+Oy4NcbGmoTYM3NL5cEL33dBvc/iN8OuvSggYeJGjv/2xNzXIHj+YPcIh6ONdt5xFw9UHfBrp1x+hMPVtN0qF83qDbcmwXH1eNL4BrJSGtS1U0IydacevJ2LIJIPI6H4KU+N9Ris+pfoJLfDV7ZRWw7N2n3F4WrcAErj4ShCISh9iUwiI+yzsfp921n8u9szp91beYS7jGJ9R8uusbRuB5uf/PtwCGIMbYg6fY9sUyJJMHR9IuT5gY7SqPc4NxW1M2MhWKi+XnyfBpw28UO77ecHvto9gGk+DxjuYvzO9Wi69f7A1n64tGFWJNm/rfNWDX+Mt5lfGsU59xHZXKFd5aAgYjptlvgsdopGwwNEQiOtdDtDV684dykRoeXnTNLwlp1UC/Li9IbEl96l9bX9NidOAi4UIVNYYLrI73bkLodrM21Tqqe6+QyWnObJo2RFem5rzHf1AppGgb+zXfuHY=
+  - secure: sgT4FA9NRw9gVT/zOuIBIBXlGFKlky3daNY+3CbW5pt+nmDLLLvXaxzydkOSlaRqWgH1pdDSfJHCWCISxu9LqAwQL3TFqGyHN7+SVytllNBdUQmu6QumY8ih8aDTwK1+a9BIy4P1x4q74uuR0+fl5VHUIMPcoLKEWzJOwKBEG0NDY91lbF/oemwPdmsIniJqs5VsUXEgZUWwCxccgMyVh3fBwDZOhhU68GQHxbZMUYhK3aP0JmfMQvO7H4nq+kgZ5Zeqg0RaXk2vqpyUDaoZljg6seb0WjnrdQ5ksXEGXfvlEMZAJuyns2fqHcj0j2aykHuY3OfbljZ9OOiPAEKnb7Ov/LztLBPiQ0WDGAk7nnw66g/CM/F/dblRSB9mIiRLdjBzdErHazF4HUzapJsrXIBnQIpaFpHXD7hdIm8e8EpLwnEXqs7AW4gfTWOqgM6Eh7i3VDiHsvjxbkJkat4t6mJ3nT199N/SSXNej8h6Zf0IGr9+1EHrtOdYljHC6CP0Y6GQvgI0Rcf6/ncRkQqceiiYsnLwvr9dciMVIGkvkl4fSRoaeqWnmLPjROoHozB9lyYS8JmNf4Y7dkk62I+AKokHwmMMTjTJ1OGb3XwbAx4EhuKrD1Wv9SPkUPdzqDSv2tmEjV7b3nx+QdTR+yBuBmbZa/30FVlxKfYLotKResM=
+branches:
+  only:
+  - publish
+install: gem install jekyll
+script:
+- jekyll build
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_3ecb93923dd4_key -iv $encrypted_3ecb93923dd4_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 deploy_rsa
+- ssh-add deploy_rsa
+- echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+addons:
+  ssh_known_hosts: 69.163.163.106
+sudo: false
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --quiet --delete-after _site/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DIRECTORY
+  on:
+    branch: publish
+
