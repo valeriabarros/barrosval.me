@@ -10,7 +10,7 @@ env:
   - secure: sgT4FA9NRw9gVT/zOuIBIBXlGFKlky3daNY+3CbW5pt+nmDLLLvXaxzydkOSlaRqWgH1pdDSfJHCWCISxu9LqAwQL3TFqGyHN7+SVytllNBdUQmu6QumY8ih8aDTwK1+a9BIy4P1x4q74uuR0+fl5VHUIMPcoLKEWzJOwKBEG0NDY91lbF/oemwPdmsIniJqs5VsUXEgZUWwCxccgMyVh3fBwDZOhhU68GQHxbZMUYhK3aP0JmfMQvO7H4nq+kgZ5Zeqg0RaXk2vqpyUDaoZljg6seb0WjnrdQ5ksXEGXfvlEMZAJuyns2fqHcj0j2aykHuY3OfbljZ9OOiPAEKnb7Ov/LztLBPiQ0WDGAk7nnw66g/CM/F/dblRSB9mIiRLdjBzdErHazF4HUzapJsrXIBnQIpaFpHXD7hdIm8e8EpLwnEXqs7AW4gfTWOqgM6Eh7i3VDiHsvjxbkJkat4t6mJ3nT199N/SSXNej8h6Zf0IGr9+1EHrtOdYljHC6CP0Y6GQvgI0Rcf6/ncRkQqceiiYsnLwvr9dciMVIGkvkl4fSRoaeqWnmLPjROoHozB9lyYS8JmNf4Y7dkk62I+AKokHwmMMTjTJ1OGb3XwbAx4EhuKrD1Wv9SPkUPdzqDSv2tmEjV7b3nx+QdTR+yBuBmbZa/30FVlxKfYLotKResM=
 branches:
   only:
-  - publish
+  - master
 install: gem install jekyll
 script:
 - jekyll build
@@ -29,5 +29,5 @@ deploy:
   skip_cleanup: true
   script: rsync -r --quiet --delete-after _site/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_DIRECTORY
   on:
-    branch: publish
+    branch: master
 
