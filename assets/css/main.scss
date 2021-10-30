@@ -224,11 +224,10 @@ img {
 .social_network {
     color: #15aabf;
     font-size: 34px;
-    margin-top: 10px;
 }
 
 .main {
-    padding: 0.5rem;
+    padding: 100px;
 
     @include breakpoint(medium) {
         margin-left: 22rem;
@@ -360,7 +359,7 @@ img {
     font-family: Roboto Slab, sans-serif;
     font-weight: 500;
     @include mobile-only {
-        width: 100%;
+        width: 109%;
         height: 9rem;
     }
 
@@ -419,12 +418,15 @@ img {
 }
 
 .header_job {
+    margin-top: 27px;
+}
+
+.header_job span {
     display: block;
     margin-top: 0.1rem;
     color: var(--job_font);
     font-size: 0.75em;
     margin-left: 8px;
-    
 }
 
 .theme_changer {   
@@ -484,7 +486,11 @@ img {
     margin-top: 1rem;
 
     @include mobile-only {
-        display: none;
+        display: -webkit-inline-box;
+        margin: -.5rem;
+        position: absolute;
+        top: 262px;
+        right: 237px;
     }
 }
 
@@ -495,12 +501,12 @@ img {
 
     @include mobile-only {
         text-align: center;
+        margin-inline-start: 15px;
     }
 }
 
 .nav_item {
     display: inline-block;
-    *display: inline;
     zoom: 1;
 
     & a {
@@ -530,20 +536,21 @@ img {
     }
 }
 
-.mobile_menu {
-    display: none;
+// .mobile_menu {
+//     display: none;
+//     padding: 3%;
 
-    @include mobile-only {
-        display: block;
-        margin: -.5rem;
-    }
+//     @include mobile-only {
+//         display: block;
+//         margin: -.5rem;
+//     }
 
-    @include breakpoint(medium) {
-        position: absolute;
-        top: 1.25rem;
-        right: 1.25rem;
-    }
-}
+//     @include breakpoint(medium) {
+//         position: absolute;
+//         top: 1.25rem;
+//         right: 1.25rem;
+//     }
+// }
 
 @keyframes jiggle {
     0% {
@@ -630,6 +637,8 @@ img {
     font-size: 0.95rem;
     line-height: 1.5rem;
     color: var(--post_text);
+    display: flow-root;
+    padding: 8px;
 
     h1,
     h2 {

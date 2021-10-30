@@ -9,8 +9,10 @@
       <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
     </a>
     <span class="header_name">{{ site.user.name }}</span>
-    <span class="header_job">🇧🇷 {{ site.user.job-pt }}</span>
-    <span class="header_job">🇬🇧 {{ site.user.job }}</span>
+    <div class="header_job">
+      <span>🇧🇷 {{ site.user.job-pt }}</span>
+      <span>🇬🇧 {{ site.user.job }}</span>
+    </div>
     <div class="social_network">
       <a class="social_network" href="https://www.linkedin.com/in/valeriabarros/" target="blank"><i class="fab fa-linkedin"></i></a>
       <a class="social_network" href="https://twitter.com/valeriaberros" target="blank"><i class="fab fa-twitter"></i></a>
